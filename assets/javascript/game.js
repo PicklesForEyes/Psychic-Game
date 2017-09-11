@@ -11,6 +11,18 @@ function newLetter() {
   return computerOption[index];
 }
 
+function print() {
+  var letterGuess = document.getElementById("userGuess");
+  var wins = document.getElementById("win");
+  var losses = document.getElementById("lose");
+  var guesses = document.getElementById("guess");
+
+  letterGuess.innerHTML = userArr;
+  wins.innerHTML = totalWins;
+  losses.innerHTML = totalLosses;
+  guesses.innerHTML = guessesLeft;
+}
+
 var letter = newLetter();
 console.log("newLetter result", letter);
 
@@ -35,16 +47,4 @@ document.onkeyup = function(event) {
     letter = newLetter();
     print();
   }
-}
-
-function print() {
-  var letterGuess = document.getElementById("userGuess");
-  var wins = document.getElementById("win");
-  var losses = document.getElementById("lose");
-  var guesses = document.getElementById("guess");
-
-  letterGuess.innerHTML = userArr;
-  wins.innerHTML = totalWins;
-  losses.innerHTML = totalLosses;
-  guesses.innerHTML = guessesLeft;
 }
